@@ -28,7 +28,8 @@ https://docs.google.com/spreadsheets/d/1-GtKVKd9E3x_gpW4bfi4Sc9G7uePfQECMnWsIY6V
 https://www.figma.com/file/vnLaNlmZW2boi5Bz1gAa4V/Untitled?type=design&node-id=0%3A1&mode=design&t=rtRAIpupVUUmSrrK-1
 
 # Diagramme ER
-![image](https://github.com/alass77/middleApp/assets/115943437/a2b482cd-3dd6-4db6-966f-019802edd1d0)
+![image](https://github.com/alass77/middleApp/assets/115943437/124fde1d-0c39-467d-b00b-d5bf1bd41e73)
+
 
 
 
