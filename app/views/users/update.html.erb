@@ -1,0 +1,14 @@
+<h1>Users#update</h1>
+<p>Find me in app/views/users/update.html.erb</p>
+<h1>Profil</h1>
+<%= form_for :user do |f| %>
+    Nom: <%= f.text_field :nom %>
+    <br/>
+    <br/>
+    
+    <br/>
+    <br/>
+    Presentation: <%= text_area :presentation, :service %>
+    
+    <%= f.submit %>
+<% end %>

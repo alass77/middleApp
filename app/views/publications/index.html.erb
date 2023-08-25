@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Publications</h1>
+
+
+<div class="container">
+  <% @publications.each do |publication| %>
+    <%= link_to publication do %> 
+      <div class="card w-100 mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= publication.titre %></h5>
+          <p class="card-text"><%= publication.contenu %></p>
+          
+        </div>
+      </div>
+    <% end %>
+    <div class=" mx-auto w-25 mb-3">
+      <%= link_to 'Edit', edit_publication_path(publication), class:"btn btn-secondary" %>
+      <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white" %>
+    </div>
+  <% end %>
+</div>
+
+
+     
+
+<br>
+ 
+<%= link_to 'New Publication', new_publication_path %>
