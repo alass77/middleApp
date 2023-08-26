@@ -1,6 +1,6 @@
 class ProjetsController < ApplicationController
   before_action :set_projet, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /projets or /projets.json
   def index
     @projets = Projet.all
@@ -22,7 +22,7 @@ class ProjetsController < ApplicationController
   # POST /projets or /projets.json
   def create
     @projet = Projet.new(projet_params)
-
+    @projet.user_id = current_user.id
     respond_to do |format|
       if @projet.save
         format.html { redirect_to projet_url(@projet), notice: "Projet was successfully created." }

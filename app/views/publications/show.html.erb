@@ -9,6 +9,6 @@
   <strong>Contenu:</strong>
   <%= @publication.contenu %>
 </p>
-
+<%= @publication.user.nom %>
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>
