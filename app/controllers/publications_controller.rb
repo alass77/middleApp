@@ -9,11 +9,13 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1 or /publications/1.json
   def show
+    #@publication.user_id = current_user.id
   end
 
   # GET /publications/new
   def new
-    @publication = Publication.new
+    #@publication = Publication.new
+    @publication = current_user.publications.build
   end
 
   # GET /publications/1/edit
@@ -22,8 +24,8 @@ class PublicationsController < ApplicationController
 
   # POST /publications or /publications.json
   def create
-    @publication = Publication.new(publication_params)
-    @publication.user_id = current_user.id
+    @publication = current_user.publications.build(publication_params)
+    #@publication.user_id = current_user.id
     respond_to do |format|
       if @publication.save
         format.html { redirect_to publication_url(@publication), notice: "Publication was successfully created." }

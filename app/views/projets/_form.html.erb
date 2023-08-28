@@ -23,18 +23,15 @@
 
   <div class="field">
     <%= form.label :debut %>
-    <%= form.date_select :debut %>
+    <%= form.date_field :debut %>
   </div>
 
   <div class="field">
     <%= form.label :fin %>
-    <%= form.date_select :fin %>
+    <%= form.date_field :fin %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

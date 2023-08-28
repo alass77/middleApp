@@ -6,6 +6,10 @@
     Email: <%= @user.email %>
     <br/>
     <br/>
-    Presentation: <%= @user.presentation %>
-    
+    <% if  !current_user.is_client? %>
+        Presentation: <%= @user.presentation %>
+        <br/>
+        <br/>
+        Adresse: <%= @user.addresse %>
+    <% end %>
    

@@ -2,16 +2,17 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   def index
-    if params[:search].present?
-      if params[:search][:service].present? && params[:search][:nom].present?
-        user = user.search_status(params[:search][:service]).search_title(params[:search][:nom])
-      elsif params[:search][:service].present?
-        user = user.search_service(params[:search][:service])
-      elsif params[:search][:nom].present?
-        user = user.search_nom(params[:search][:nom])
-      end
-    end
-    @user = User.where(is_client: 0).all
+    # if params[:search].present?
+    #   if params[:search][:service].present? && params[:search][:nom].present?
+    #     user = user.search_status(params[:search][:service]).search_title(params[:search][:nom])
+    #   elsif params[:search][:service].present?
+    #     user = user.search_service(params[:search][:service])
+    #   elsif params[:search][:nom].present?
+    #     user = user.search_nom(params[:search][:nom])
+    #   end
+    # end
+    # @user = User.where(is_client: 0).all
+    @user = User.all
     
   end
 
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
 
 
   def show
-     #@user = User.find(session[:auth]['id'])
+    #@user = User.find(session[:auth]['id'])
     @user = User.find_by_id(params[:id])
     #@nom = @user.nom(user_params)
     #@user = User.find(params[:id])@user = User.find(params[:id])
