@@ -8,10 +8,11 @@
 <p>
   <strong>Contenu:</strong>
   <%= @publication.contenu %>
+
 </p>
 
 
-<%=# link_to 'Profil', publication_path(@publiction.user_id) %>
+<%= link_to 'Profil', user_path(@publication_user) %>
 
 
 <%= link_to 'Edit', edit_publication_path(@publication) %> |

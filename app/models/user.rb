@@ -12,8 +12,8 @@ class User < ApplicationRecord
     Formation: 4
   }
   
-  scope :search_service, -> (service) { where(service: service) }
-  scope :search_nom, -> (nom) { where("nom LIKE ?", "%#{nom}%") }
+  # scope :search_service, -> (service) { where(service: service) }
+  # scope :search_nom, -> (nom) { where("nom LIKE ?", "%#{nom}%") }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     #@nom = @user.nom(user_params)
     #@user = User.find(params[:id])@user = User.find(params[:id])
-    
+    #render template: 'projets/form'
   end
 
   def create
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nom, :email, :password, :password_confirmation, :presentation, :adresse, :service )
+    params.require(:user).permit(:nom, :email, :password, :password_confirmation, :presentation, :addresse, :service )
   end
 
 end

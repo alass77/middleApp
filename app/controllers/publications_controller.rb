@@ -10,6 +10,7 @@ class PublicationsController < ApplicationController
   # GET /publications/1 or /publications/1.json
   def show
     #@publication.user_id = current_user.id
+    @publication_user = @publication.user_id
   end
 
   # GET /publications/new
@@ -39,6 +40,7 @@ class PublicationsController < ApplicationController
 
   # PATCH/PUT /publications/1 or /publications/1.json
   def update
+    @publication.user_id = current_user.id
     respond_to do |format|
       if @publication.update(publication_params)
         format.html { redirect_to publication_url(@publication), notice: "Publication was successfully updated." }

@@ -12,7 +12,7 @@ class ProjetsController < ApplicationController
 
   # GET /projets/new
   def new
-    @projet = Projet.new
+    @projet = current_user.projets.build
   end
 
   # GET /projets/1/edit
@@ -21,7 +21,7 @@ class ProjetsController < ApplicationController
 
   # POST /projets or /projets.json
   def create
-    @projet = Projet.new(projet_params)
+    @projet = current_user.projets.build(projet_params)
     @projet.user_id = current_user.id
     respond_to do |format|
       if @projet.save

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projets
+  
   # get 'users/index'
   # get 'users/show'
   # post 'users/show'
@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :publications
   #resources :users, only: [:show]
-  resources :users
+  resources :users do
+    resources :projets
+  end
   get 'home/index'
   root to: "home#index"
   #get 'profil/index'
