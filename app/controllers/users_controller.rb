@@ -1,19 +1,28 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
 
+
+  def search
+    @query = params[:query]
+    @user = User.where("nom LIKE ?", ["%#{@query}%"])
+    render 'index'
+  end
+
   def index
     # if params[:search].present?
     #   if params[:search][:service].present? && params[:search][:nom].present?
-    #     user = user.search_status(params[:search][:service]).search_title(params[:search][:nom])
+    #     users = users.search_service(params[:search][:service]).search_nom(params[:search][:nom])
     #   elsif params[:search][:service].present?
-    #     user = user.search_service(params[:search][:service])
+    #     users = users.search_service(params[:search][:service])
     #   elsif params[:search][:nom].present?
-    #     user = user.search_nom(params[:search][:nom])
+    #     users = users.search_nom(params[:search][:nom])
     #   end
     # end
     # @user = User.where(is_client: 0).all
     @user = User.all
-    
+    # @user_id = User.find_by_id(params[:id])
+    # @users = User.order(:created_at).page(params[:page])
+  
   end
 
   def new
@@ -27,6 +36,9 @@ class UsersController < ApplicationController
     #@nom = @user.nom(user_params)
     #@user = User.find(params[:id])@user = User.find(params[:id])
     #render template: 'projets/form'
+  end
+
+  def edit
   end
 
   def create

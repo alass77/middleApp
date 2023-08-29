@@ -1,21 +1,14 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<%= form_with(url: users_path, method: :get, scope: :search,local: true) do |form| %>
-      <div class="field">
-          <%= form.label :service %>
-          <%= form.select :service, options_for_select(['Sante', 'Banque', 'Ingenieri', 'Securite', 'Formation']), include_blank: true %>
-      </div>
-      <div class="field">
-        <%= form.label :nom %>
-        <%= form.text_field :nom , id: "nom"%>
-      </div>
-      <%= form.submit "Rechercher", id: "search_service" %>
-<% end %>
+<div class="row justify-content-center">
+      <h1 class="col-4">Resultats</h1>
+</div
 <% @user.each do |user| %>
-    
-      <td><%= user.email %></td>
-     
-      <br/>
-      <br/>
-    
+      <%= link_to user_path(user.id) do %> 
+            <div class="card w-80 mb-3">
+                  <div class="card-body">
+                        <h5 class="card-title"><%=user.nom%></h5>
+                        <p class="card-text"><%=user.presentation%></p>
+                  </div>
+            </div
+      <% end %>  
 <% end %>
+<%= paginate @users %>

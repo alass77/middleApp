@@ -3,9 +3,12 @@
     </br>
     </br>
     <% if  !user_signed_in? %>
-        <%= link_to "Se connecter", new_user_session_path, class:'fs-15 btn btn-lg btn-primary rounded-pill' %>
+        <%= link_to "Se connecter", new_user_session_path, class:'fs-15 btn btn-lg btn-primary rounded-pill text-white' %>
         </br>
         
-        <%= link_to "Creer un compte", new_user_registration_path, class: "btn btn-lg btn-primary rounded-pill" %>
+        <%= link_to "Creer un compte", new_user_registration_path, class: "btn btn-lg btn-primary rounded-pill text-white" %>
+    <% end %>
+    <% if  user_signed_in? %>
+        <%= link_to "Ajuster votre profil",  edit_user_registration_path, class:'fs-15 btn btn-lg btn-primary rounded-pill text-white' %>
     <% end %>
 </div>

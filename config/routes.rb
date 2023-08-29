@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # get 'users/index'
   # get 'users/show'
   # post 'users/show'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   end
   get 'home/index'
   root to: "home#index"
+  get '/search' , to: "users#search"
   #get 'profil/index'
   
   #root 'publications#home'

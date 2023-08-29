@@ -5,12 +5,13 @@ class PublicationsController < ApplicationController
   # GET /publications or /publications.json
   def index
     @publications = Publication.all
+    @pubs = Publication.order(:created_at).page(params[:page])
   end
 
   # GET /publications/1 or /publications/1.json
   def show
     #@publication.user_id = current_user.id
-    @publication_user = @publication.user_id
+    @publication_user = @publication.user.id
   end
 
   # GET /publications/new

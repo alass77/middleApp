@@ -27,7 +27,7 @@
         <%= f.label :service %>
         <%= f.select :service, options_for_select(['Sante', 'Banque', 'Ingenieri', 'Securite', 'Formation']), include_blank: true %>
       </div>
-      <%= render "projets/show"  %>
+      <%= render "projets/form"  %>
     <% end %>
     <% if  current_user? %>
       <%= link_to "Editer", new_user_path, class:'fs-15 btn btn-lg btn-primary rounded-pill' %>

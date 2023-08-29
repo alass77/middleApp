@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Publications</h1>
-
-
+<div class="d-grid gap-2 col-2 mx-auto">
+  <%= link_to 'New Publication', new_publication_path, class:"btn btn-primary text-white" %>
+</div>
+<br>
 <div class="container">
   <% @publications.each do |publication| %>
     <%= link_to publication do %> 
@@ -15,15 +17,16 @@
       </div>
     <% end %>
     <div class=" mx-auto w-25 mb-3">
-      <%= link_to 'Edit', edit_publication_path(publication), class:"btn btn-secondary" %>
-      <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white" %>
+      <%= link_to 'Edit', edit_publication_path(publication), class:"btn btn-secondary text-white" %>
+      <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white text-white" %>
     </div>
   <% end %>
+  <%= paginate @pubs %>
 </div>
 
 
      
 
-<br>
+
  
-<%= link_to 'New Publication', new_publication_path %>
+
