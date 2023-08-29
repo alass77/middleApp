@@ -32,6 +32,7 @@ gem 'devise'
 gem 'rexml'
 gem 'kaminari'
 gem 'rails_admin', '~> 3.0'
+
 gem 'cancancan'
 
 group :development, :test do
