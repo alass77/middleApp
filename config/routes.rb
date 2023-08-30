@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   #get 'profil/index'
   devise_for :users
   resources :publications
-  #resources :users, only: [:show]
-  resources :users do
-    resources :projets
-  end
+  resources :users
+  # resources :users do
+  #   resources :projets
+  # end
+  resources :projets
   get 'home/index'
   root to: "home#index"
   get '/search' , to: "users#search"
