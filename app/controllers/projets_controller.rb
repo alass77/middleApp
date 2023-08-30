@@ -8,6 +8,7 @@ class ProjetsController < ApplicationController
 
   # GET /projets/1 or /projets/1.json
   def show
+    @projet_user = @projet.user.id
   end
 
   # GET /projets/new

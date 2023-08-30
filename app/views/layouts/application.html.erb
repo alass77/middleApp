@@ -25,8 +25,14 @@
             </li>
             <li class="nav-item">
             
-              <%= link_to 'Profil', user_path(current_user.id)%> 
+              <%= link_to 'Profil', user_path(current_user.id)%> |
             </li>
+
+            <li class="nav-item">
+            
+              <%= link_to 'Projet', projets_path%> 
+            </li>
+
             <% end %>
           </ul>
           <form class="d-flex" methode="GET" action="/search">

@@ -2,6 +2,7 @@
 
 <p>
   <strong>Nom:</strong>
+  
   <%= @projet.nom %>
 </p>
 
@@ -20,10 +21,6 @@
   <%= @projet.fin %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @projet.user_id %>
-</p>
-
+<%= link_to 'Profil', user_path(@projet_user) %> |
 <%= link_to 'Edit', edit_projet_path(@projet) %> |
 <%= link_to 'Back', projets_path %>

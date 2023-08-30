@@ -16,10 +16,6 @@
         </div>
       </div>
     <% end %>
-    <div class=" mx-auto w-25 mb-3">
-      <%= link_to 'Edit', edit_publication_path(publication), class:"btn btn-secondary text-white" %>
-      <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white text-white" %>
-    </div>
   <% end %>
   <%= paginate @pubs %>
 </div>
