@@ -37,6 +37,7 @@ https://www.figma.com/file/vnLaNlmZW2boi5Bz1gAa4V/Untitled?type=design&node-id=0
 
 
 # Diagramme de transition d'écran
-![image](https://github.com/alass77/middleApp/assets/115943437/e28b43b9-a9ec-4228-8b65-1312767f8229)
+![image](https://github.com/alass77/middleApp/assets/115943437/03ea46be-aa10-4f55-8262-b864c6294b83)
+
 
 
