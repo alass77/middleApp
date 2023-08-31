@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
-  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # get 'users/index'
-  # get 'users/show'
-  # post 'users/show'
-  # get 'users/create'
-  # get 'users/update'
-  # get 'users/destroy'
-  #get 'profil/index'
   devise_for :users
   resources :publications
-  resources :users
-  # resources :users do
-  #   resources :projets
-  # end
+  resources :users, controllers: { sessions: 'sessions' }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest', as: :guest_sign_in
+    post 'users/admin_guest_sign_in', to: 'users/sessions#new_admin_guest', as: :admin_guest_sign_in
+  end
   resources :projets
   get 'home/index'
   root to: "home#index"
